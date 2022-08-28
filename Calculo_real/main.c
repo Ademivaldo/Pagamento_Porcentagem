@@ -7,7 +7,6 @@ float calculoporcentagem(float porcento){
     return retorno;
 }
 
-
 int main()
 {
     // declarações
@@ -19,8 +18,8 @@ int main()
     printf("Digite quantos produtos foram vendidos: ");
     scanf("%d", &nPedidos);
 
-
     // loop para preencher preço e nome
+    printf("\nselecionou %d\n", nPedidos);
     for (i=0; i < nPedidos; i++) {
         printf("Digite o nome do produto: #%d ", (i+1));
         scanf("%s", &produtos[i]);
