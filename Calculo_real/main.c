@@ -7,22 +7,24 @@ float calculoporcentagem(float porcento){
     return retorno;
 }
 
+
 int main()
 {
     // declarações
     int nPedidos, i=0;
-    char produtos[sizeof(nPedidos)][30];
-    float preco[sizeof(nPedidos)], porcento[sizeof(nPedidos)];
+    char produtos[nPedidos][30];
+    float preco[nPedidos], porcento[nPedidos], salario = 0;
 
     // captura da quantidade de produtos
     printf("Digite quantos produtos foram vendidos: ");
     scanf("%d", &nPedidos);
 
+
     // loop para preencher preço e nome
-    for (i; i < nPedidos; i++) {
-        printf("Digite o nome do produto: #%d ", i+1);
+    for (i=0; i < nPedidos; i++) {
+        printf("Digite o nome do produto: #%d ", (i+1));
         scanf("%s", &produtos[i]);
-        printf("Digite o preco do produto: #%d ", i+1);
+        printf("Digite o preco do produto: #%d ", (i+1));
         scanf("%f", &preco[i]);
         printf("\n");
     }
@@ -38,14 +40,10 @@ int main()
     for (i=0; i < nPedidos; i++) {
         printf("produto #%d %s: ",i+1, produtos[i]);
         printf("%.2f",(calculoporcentagem(porcento[i] * preco[i])));
+        salario += calculoporcentagem(porcento[i] * preco[i]);
         printf("\n");
     }
 
-
-
-//    for(i=0;i < nPedidos; i++) {
-  //      printf("Produto #%d nome: %s valor: %.2f \n",i+1, produtos[i], preco[i]);
-    //}
-
+    printf("\nO vendedor deve recer R$%.2f \n\n ", salario);
     return 0;
 }
